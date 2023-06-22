@@ -21,6 +21,22 @@ export const demos: { name: string; items: Item[] }[] = [
     ],
   },
   {
+    name: 'Cryptos',
+    items: [
+      {
+        name: 'BTCUSD',
+        slug: 'loading',
+        description:
+          'Create meaningful Loading UI for specific parts of an app',
+      },
+      {
+        name: 'ETHUSD',
+        slug: 'ethereum',
+        description: 'Create Error UI for specific parts of an app',
+      },
+    ],
+  },
+  {
     name: 'File Conventions',
     items: [
       {
