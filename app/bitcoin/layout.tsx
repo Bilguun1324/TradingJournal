@@ -1,6 +1,10 @@
 import { TabGroup } from '#/ui/tab-group';
 import React from 'react';
 
+export const metadata = {
+  title: 'Loading',
+};
+
 export default async function Layout({
   children,
 }: {
@@ -10,19 +14,14 @@ export default async function Layout({
     <div className="space-y-9">
       <div className="flex flex-wrap items-center gap-2">
         <TabGroup
-          path="/ethereum/history"
+          path="/bitcoin"
           items={[
             {
-              text: 'All',
-              slug: 'all',
+              text: 'Home',
             },
             {
-              text: 'Lost',
-              slug: 'lost',
-            },
-            {
-              text: 'Won',
-              slug: 'won',
+              text: 'Trading History',
+              slug: 'history',
             },
           ]}
         />
