@@ -9,9 +9,6 @@ export const Product = ({ product }: { product: IProduct }) => {
       <div className="col-span-full lg:col-span-1">
         <div className="space-y-2">
           <Image
-            // vs `<img>`, we get:
-            // - Automatic formats
-            // - Automatic image resizing
             src={`/${product.image}`}
             className="hidden rounded-lg grayscale lg:block"
             alt={product.name}

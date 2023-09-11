@@ -4,13 +4,13 @@ import { getStorage } from 'firebase/storage';
 import { getFirestore } from 'firebase/firestore';
 
 const config = {
-  apiKey: 'AIzaSyDlbme_JwePjjk1xqDbfIXxtaureYyU0Fs',
-  authDomain: 'doc-fast.firebaseapp.com',
-  projectId: 'doc-fast',
-  storageBucket: 'doc-fast.appspot.com',
-  messagingSenderId: '221901669818',
-  appId: '1:221901669818:web:f55c5a8492c7eca3768983',
-  measurementId: 'G-090HCDS98L',
+  apiKey: 'AIzaSyAMkovjyaDyRCKjYi0qrR6kdTf7g-Y6haw',
+  authDomain: 'journal-5120c.firebaseapp.com',
+  projectId: 'journal-5120c',
+  storageBucket: 'journal-5120c.appspot.com',
+  messagingSenderId: '618061119341',
+  appId: '1:618061119341:web:9a9f9b8596be5f95a62464',
+  measurementId: 'G-H2J5ZVR0E3',
 };
 
 export const useFirebase = () => {

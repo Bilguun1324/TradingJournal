@@ -1,10 +1,4 @@
 import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  updateProfile,
-} from 'firebase/auth';
-import {
   collection,
   deleteDoc,
   doc,
@@ -22,18 +16,11 @@ import {
 } from 'firebase/storage';
 import { useFirebase } from './initialize';
 
-interface SignInInfo {
-  email: string;
-  password: string;
-  username: string;
-  image?: string | null;
-}
-
 export const useCol = (path: string) => {
   const { db } = useFirebase();
 
   const getRecords = async () => {
-    let data: any[] = [];
+    let data: Array<any> = [];
     const query = fsQuery(collection(db, path));
     const docs = await getDocs(query);
     docs.forEach((doc) => {
@@ -89,29 +76,6 @@ export const useDoc = async (path: string) => {
   };
 
   return { data, updateRecord, deleteRecord };
-};
-
-export const useAuth = () => {
-  const { auth }: any = useFirebase();
-  const signIn = async ({ email, password }: SignInInfo) => {
-    await signInWithEmailAndPassword(auth, email, password);
-    return auth.currentUser;
-  };
-
-  const signUp = async ({ email, password, username, image }: SignInInfo) => {
-    await createUserWithEmailAndPassword(auth, email, password);
-    await updateProfile(auth.currentUser, {
-      displayName: username && username,
-      photoURL: image && image,
-    });
-    return auth.currentUser;
-  };
-
-  const signOutUser = async () => {
-    await signOut(auth);
-  };
-
-  return { signIn, signUp, signOutUser };
 };
 
 export const useStorage = (path: string) => {
